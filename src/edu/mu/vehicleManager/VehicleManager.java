@@ -82,4 +82,27 @@ public class VehicleManager {
             }
         }
     }
+
+    public void displayAllSUVInformation() {
+        // Implement displaying the information of all SUVs
+    	ArrayList<Vehicle> suvList = new ArrayList<>();
+    	for (Vehicle vehicle : vehicleList) {
+            if (vehicle instanceof SUV) {
+            	suvList.add(vehicle);
+            	System.out.println(vehicle + " MaintenanceCost: " + vehicle.calculateMaintenaceCost(5000) +  ", FuelEfficiency: " + vehicle.calculateFuelEfficiency(5000, vehicle.getFuelPrice(vehicle.getFuelType())));
+            }
+        }
+    }
+
+    public void displayAllMotorBikeInformation() {
+        // Implement displaying the information of all motor bikes
+    	ArrayList<Vehicle> motorbikeList = new ArrayList<>();
+    	for (Vehicle vehicle : vehicleList) {
+            if (vehicle instanceof MotorBike) {
+            	motorbikeList.add(vehicle);
+            	System.out.println(vehicle + " MaintenanceCost: " + vehicle.calculateMaintenaceCost(5000) +  ", FuelEfficiency: " + vehicle.calculateFuelEfficiency(5000, vehicle.getFuelPrice(vehicle.getFuelType())));
+            }
+        }
+    }
+
 }
