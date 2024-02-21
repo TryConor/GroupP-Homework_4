@@ -1,5 +1,17 @@
 package edu.mu.vehicleManager;
 
+import edu.mu.vehicleAttributes.FuelType;
+import edu.mu.vehicleAttributes.StartMechanism;
+import edu.mu.vehicleAttributes.VehicleColor;
+import edu.mu.vehicles.Car;
+import edu.mu.vehicles.MotorBike;
+import edu.mu.vehicles.SUV;
+import edu.mu.vehicles.Truck;
+import edu.mu.vehicles.Vehicle;
+import java.io.*;
+import java.util.*;
+
+
 public class VehicleManager {
     private ArrayList<Vehicle> vehicleList;
 	private final static String vehicleFilePath = "Files/vehicleList.csv";
@@ -105,4 +117,10 @@ public class VehicleManager {
         }
     }
 
+    public void displayAllVehicleInformation() {
+        // Implement displaying the information of all vehicles
+    	for (Vehicle vehicle : vehicleList) {
+    		System.out.println(vehicle + ", MaintenanceCost: " + vehicle.calculateMaintenaceCost(5000) +  ", FuelEfficiency: " + vehicle.calculateFuelEfficiency(5000, vehicle.getFuelPrice(vehicle.getFuelType())));
+    	}
+    }
 }
