@@ -12,4 +12,22 @@ public class Truck extends Vehicle{
 		// TODO Auto-generated constructor stub
 	}
 
+	@Override
+	public double calculateMaintenaceCost(double distance) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public double calculateFuelEfficiency(double distance, double fuelPrice) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void startEngine() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

@@ -119,6 +119,10 @@ public abstract class Vehicle {
 	public void setStartType(StartMechanism startType) {
 		this.startType = startType;
 	}
+	
+	public abstract double calculateMaintenaceCost(double distance);
+	public abstract double calculateFuelEfficiency(double distance, double fuelPrice);
+	public abstract void startEngine();
 
 	@Override
 	public String toString() {
