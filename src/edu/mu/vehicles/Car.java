@@ -13,8 +13,12 @@ public class Car extends Vehicle{
 
 	@Override
 	public double calculateMaintenaceCost(double distance) {
-		// TODO Auto-generated method stub
-		return 0;
+		//maybe built-in function to get current year?
+		int currentYear = 2024;
+			
+		double maintenanceCost = distance *mass*(currentYear-modelYear)*cylinders*0.002;
+		return maintenanceCost;
+		
 	}
 
 	@Override
