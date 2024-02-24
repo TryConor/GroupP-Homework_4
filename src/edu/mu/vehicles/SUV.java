@@ -25,8 +25,8 @@ public class SUV extends Vehicle{
 
 	@Override
 	public double calculateFuelEfficiency(double distance, double fuelPrice) {
-		// TODO Auto-generated method stub
-		return 0;
+		double fuelEfficiency = cylinders * gasTankCapacity * fuelPrice/distance * 0.05;
+		return fuelEfficiency;
 	}
 
 	@Override
