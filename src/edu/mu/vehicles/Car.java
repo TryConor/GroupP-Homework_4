@@ -1,5 +1,7 @@
 package edu.mu.vehicles;
 
+import java.time.Year;
+
 import edu.mu.vehicleAttributes.FuelType;
 import edu.mu.vehicleAttributes.StartMechanism;
 import edu.mu.vehicleAttributes.VehicleColor;
@@ -13,8 +15,8 @@ public class Car extends Vehicle{
 
 	@Override
 	public double calculateMaintenaceCost(double distance) {
-		//maybe built-in function to get current year?
-		int currentYear = 2024;
+		
+		int currentYear = Year.now().getValue();
 			
 		double maintenanceCost = distance *mass*(currentYear-modelYear)*cylinders*0.002;
 		return maintenanceCost;
