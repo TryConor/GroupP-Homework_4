@@ -130,6 +130,45 @@ public class VehicleManager {
 //    		System.out.println(vehicle + ", MaintenanceCost: " + vehicle.calculateMaintenaceCost(5000) +  ", FuelEfficiency: " + vehicle.calculateFuelEfficiency(5000, vehicle.getFuelPrice(vehicle.getFuelType())));
     	}
     }
+    
+    private boolean isVehicleType(Vehicle v, Class clazz) {
+        // Implement checking if the given vehicle is a specific type of Vehicle subclass
+    	if(v.getClass().equals(clazz)) {
+    		return true;
+    	}
+    	else {
+    		return false;
+    	}
+    	
+    }
+
+    public int getNumberOfVehichlesByType(Class clazz) {
+    	// Implement returning the number of objects in the vehicleList based on the object vehicle type
+    	
+    	int vehicleTypeCount = 0;
+    	//for each vehicle in vehicleList test to see if it is specified object vehicle type
+    	for(Vehicle v : vehicleList) {
+    		//if the vehicle types match (isVehicleType returns true) add 1 to counter
+    		//otherwise loop goes to next vehicle in list
+    		if(isVehicleType(v,clazz)) {
+    			vehicleTypeCount++;
+    		}
+    	}
+    	//return count of objects with object vehicle type clazz
+    	return vehicleTypeCount++;
+    }
+
+    public Vehicle getVehicleWithHighestMaintenanceCost(double distance) {
+    	// Implement returning the vehicle with the highest maintenance cost
+    	
+    	return null;
+    }
+
+    public Vehicle getVehicleWithLowestMaintenanceCost(double distance) {
+		return null;
+        // Implement returning the vehicle with the lowest maintenance cost
+    }
+=======
     	
     public boolean removeVehicle(Vehicle vehicleToRemove) {
         // Remove the vehicle from the list
