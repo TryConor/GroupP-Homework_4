@@ -130,4 +130,82 @@ public class VehicleManager {
 //    		System.out.println(vehicle + ", MaintenanceCost: " + vehicle.calculateMaintenaceCost(5000) +  ", FuelEfficiency: " + vehicle.calculateFuelEfficiency(5000, vehicle.getFuelPrice(vehicle.getFuelType())));
     	}
     }
+    	
+    public boolean removeVehicle(Vehicle vehicleToRemove) {
+        // Remove the vehicle from the list
+        boolean removed = vehicleList.remove(vehicleToRemove);
+
+        if (removed) {
+            // Write the updated list of vehicles back to the CSV file
+            try {
+                FileWriter writer = new FileWriter(vehicleFilePath);
+                writer.write("Type,Brand,Make,ModelYear,Price,Color,FuelType,Mileage,Mass,Cylinders,GasTankCapacity,StartMechanism\n");
+                for (Vehicle vehicle : vehicleList) {
+                    writer.write(vehicleToCSV(vehicle) + "\n");
+                }
+                writer.close();
+                return true; // Successfully removed and updated CSV
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return false; // Vehicle not found or error occurred
+    }
+
+    public boolean addVehicle(Vehicle vehicleToAdd) {
+        // Add the vehicle to the list
+        boolean added = vehicleList.add(vehicleToAdd);
+
+        if (added) {
+            try {
+                FileWriter writer = new FileWriter(vehicleFilePath, true); // append mode
+                writer.write(vehicleToCSV(vehicleToAdd) + "\n");
+                writer.close();
+                return true;
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return false; // Failed to add the vehicle
+    }
+
+    public boolean saveVehicleList() {
+        try {
+            FileWriter writer = new FileWriter(vehicleFilePath);
+            writer.write("Type,Brand,Make,ModelYear,Price,Color,FuelType,Mileage,Mass,Cylinders,GasTankCapacity,StartMechanism\n");
+            for (Vehicle vehicle : vehicleList) {
+                writer.write(vehicleToCSV(vehicle) + "\n");
+            }
+            writer.close();
+            return true;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    
+    private String vehicleToCSV(Vehicle vehicle) {
+    	//Convert vehicle object to CSV format 
+    	return String.format("%s,%s,%s,%d,%.2f,%s,%s,%.2f,%.2f,%d,%.2f,%s",
+                vehicle.getClass().getSimpleName(),
+                vehicle.getBrand(),
+                vehicle.getMake(),
+                vehicle.getModelYear(),
+                vehicle.getPrice(),
+                vehicle.getColor(),
+                vehicle.getFuelType(),
+                vehicle.getMileage(),
+                vehicle.getMass(),
+                vehicle.getCylinders(),
+                vehicle.getGasTankCapacity(),
+                vehicle.getStartType()
+        );
+    }
+
+	public ArrayList<Vehicle> getVehicleList() {
+		// TODO Auto-generated method stub
+		return vehicleList;
+	}
+    
 }
