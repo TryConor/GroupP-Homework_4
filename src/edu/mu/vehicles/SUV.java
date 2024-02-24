@@ -1,5 +1,7 @@
 package edu.mu.vehicles;
 
+import java.time.Year;
+
 import edu.mu.vehicleAttributes.FuelType;
 import edu.mu.vehicleAttributes.StartMechanism;
 import edu.mu.vehicleAttributes.VehicleColor;
@@ -14,8 +16,11 @@ public class SUV extends Vehicle{
 
 	@Override
 	public double calculateMaintenaceCost(double distance) {
-		// TODO Auto-generated method stub
-		return 0;
+		int currentYear = Year.now().getValue();
+		
+		double maintenanceCost = distance *mass*(currentYear-modelYear)*cylinders*0.001;
+		return maintenanceCost;
+		
 	}
 
 	@Override
