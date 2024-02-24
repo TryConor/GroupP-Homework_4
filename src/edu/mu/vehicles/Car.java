@@ -15,10 +15,9 @@ public class Car extends Vehicle{
 
 	@Override
 	public double calculateMaintenaceCost(double distance) {
-		
 		int currentYear = Year.now().getValue();
 			
-		double maintenanceCost = distance *mass*(currentYear-modelYear)*cylinders*0.002;
+		double maintenanceCost = distance *mass*(currentYear-modelYear)*cylinders*0.0005;
 		return maintenanceCost;
 		
 	}
