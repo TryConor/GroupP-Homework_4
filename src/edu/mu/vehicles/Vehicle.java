@@ -31,7 +31,7 @@ public abstract class Vehicle {
 		this.gasTankCapacity = gasTankCapacity;
 		this.startType = startType;
 	}
-
+	
 	public String getBrand() {
 		return brand;
 	}

@@ -32,7 +32,7 @@ public class SUV extends Vehicle{
 	@Override
 	public void startEngine() {
 		// TODO Auto-generated method stub
-		
+		System.out.println("Starting the engine using PUSHSTART.");
 	}
 
 }
