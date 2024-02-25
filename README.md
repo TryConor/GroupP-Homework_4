@@ -16,5 +16,5 @@ This Java program, a part of the Object-Oriented Programming homework, implement
 - **Conor McLaughlin**: Completed the `Main` class (includes calling methods to read from vehicleList.csv, to add/remove vehicles, to display vehicle information, and to calculate cost and efficiency values about the vehicles). Also contributed to the implementation of methods in VehicleManager to save, add, and remove vehicles and calculate lowest, highest, and average fuel efficiencies/maintenance costs.
 
 ### How to Run
-The program can be executed by running the `Main` class. Ensure all required Java files are present, which includes vehicleList.csv in the "files" folder, and ensure dependencies are satisfied.
+The program can be executed by running the `Main` class. Ensure all required Java files are present, which includes vehicleList.csv in the *files* folder, and ensure dependencies are satisfied.
 
