@@ -123,6 +123,32 @@ public class VehicleManager {
             }
         }
     }
+    
+    public void displayVehicleInformation(Vehicle v) {
+        if (v == null) {
+            System.out.println("Vehicle is null");
+            return;
+        }
+
+        if (v instanceof Vehicle) {
+            Vehicle vehicle = (Vehicle) v;
+            System.out.println(vehicle.toString() + ", MaintenanceCost: " + vehicle.calculateMaintenaceCost(distance) +  ", FuelEfficiency: " + vehicle.calculateFuelEfficiency(distance, fuelPrice));
+        } else if (v instanceof Car) {
+            Car Car = (Car) v;
+            System.out.println(Car.toString() + ", MaintenanceCost: " + Car.calculateMaintenaceCost(distance) +  ", FuelEfficiency: " + Car.calculateFuelEfficiency(distance, fuelPrice));
+        } else if (v instanceof Truck) {
+            Truck Truck = (Truck) v;
+            System.out.println(Truck.toString() + ", MaintenanceCost: " + Truck.calculateMaintenaceCost(distance) +  ", FuelEfficiency: " + Truck.calculateFuelEfficiency(distance, fuelPrice));
+        } else if (v instanceof SUV) {
+            SUV SUV = (SUV) v;
+            System.out.println(SUV.toString() + ", MaintenanceCost: " + SUV.calculateMaintenaceCost(distance) +  ", FuelEfficiency: " + SUV.calculateFuelEfficiency(distance, fuelPrice));
+        } else if (v instanceof MotorBike) {
+            MotorBike MotorBike = (MotorBike) v;
+            System.out.println(MotorBike.toString() + ", MaintenanceCost: " + MotorBike.calculateMaintenaceCost(distance) +  ", FuelEfficiency: " + MotorBike.calculateFuelEfficiency(distance, fuelPrice));
+        } else {
+            System.out.println("Unknown vehicle type");
+        }
+}
 
     public boolean removeVehicle(Vehicle vehicleToRemove) {
         // Remove the vehicle from the list
