@@ -29,6 +29,8 @@ public class Main {
             System.out.println("Failed to add the vehicle.");
         }
         
+        System.out.println("\nDisplaying a Vehicle:");
+        vehicleManager.displayVehicleInformation(vehicleToAdd);
         System.out.println("\n");
 
         // Remove a vehicle
